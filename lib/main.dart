@@ -18,7 +18,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: const MyHomePage(title: 'Flutter Demo Home Page'),
+      home: const MyHomePage(title: 'Product Details'),
     );
   }
 }
@@ -43,25 +43,44 @@ class _MyHomePageState extends State<MyHomePage> {
       appBar: AppBar(
 
         title: Text(widget.title),
+        backgroundColor: Colors.amber,
       ),
-      body: Column(
-        children:<Widget> [
-          Center(
-            child: Container(
-              height: 200,
-              width: 200,
-              color: Colors.green,
-              child: ElevatedButton(
-                child: Text("Press me",style: TextStyle(fontSize: 30,fontWeight: FontWeight.bold),),
-                onPressed: (){
-                  Navigator.push(context, MaterialPageRoute(builder:(context){return page1();}));
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          children:<Widget> [
+             Container(
+               height: 200,
+                 width: 200,
+                 child: Image.asset('assets/images/galaxy.png')),
 
-                },
+               Container(
+                 height: 40,
+                 width: 230,
+                 color: Colors.green,
+
+                 child: Text("Price : 1,00,000 TAKA",style: TextStyle(fontSize: 20,color: Colors.white,fontWeight: FontWeight.bold),) ,
+
+               ),
+
+
+
+               Container(
+                height: 60,
+                width: 200,
+                color: Colors.green,
+                child: ElevatedButton(
+                  child: Text("Buy Now",style: TextStyle(fontSize: 30,fontWeight: FontWeight.bold),),
+                  onPressed: (){
+                    Navigator.push(context, MaterialPageRoute(builder:(context){return page1();}));
+
+                  },
+                ),
+
               ),
 
-            ),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }
