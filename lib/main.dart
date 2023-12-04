@@ -44,20 +44,24 @@ class _MyHomePageState extends State<MyHomePage> {
 
         title: Text(widget.title),
       ),
-      body: Center(
-        child: Container(
-          height: 200,
-          width: 200,
-          color: Colors.green,
-          child: ElevatedButton(
-            child: Text("Press me",style: TextStyle(fontSize: 30,fontWeight: FontWeight.bold),),
-            onPressed: (){
-              Navigator.push(context, MaterialPageRoute(builder:(context){return page1();}));
-              
-            },
-          ),
+      body: Column(
+        children:<Widget> [
+          Center(
+            child: Container(
+              height: 200,
+              width: 200,
+              color: Colors.green,
+              child: ElevatedButton(
+                child: Text("Press me",style: TextStyle(fontSize: 30,fontWeight: FontWeight.bold),),
+                onPressed: (){
+                  Navigator.push(context, MaterialPageRoute(builder:(context){return page1();}));
 
-        ),
+                },
+              ),
+
+            ),
+          ),
+        ],
       ),
     );
   }
